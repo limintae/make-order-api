@@ -26,13 +26,12 @@ public class ProductDto {
 
   public ProductDto(Product source) {
     copyProperties(source, this);
-
   }
 
   @Override
   public String toString() {
     return new ToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE)
-        .append("seq", id)
+        .append("id", id)
         .append("name", name)
         .append("details", details)
         .append("reviewCount", reviewCount)

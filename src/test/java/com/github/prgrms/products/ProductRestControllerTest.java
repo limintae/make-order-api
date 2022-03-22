@@ -51,21 +51,20 @@ class ProductRestControllerTest {
         .andExpect(jsonPath("$.success", is(true)))
         .andExpect(jsonPath("$.response").isArray())
         .andExpect(jsonPath("$.response.length()", is(3)))
-        .andExpect(jsonPath("$.response[0].seq", is(3)))
+        .andExpect(jsonPath("$.response[0].id", is(3)))
         .andExpect(jsonPath("$.response[0].name", is("Product C")))
         .andExpect(jsonPath("$.response[0].details", is("Very good product")))
         .andExpect(jsonPath("$.response[0].reviewCount").exists())
         .andExpect(jsonPath("$.response[0].reviewCount").isNumber())
-        .andExpect(jsonPath("$.response[1].seq", is(2)))
+        .andExpect(jsonPath("$.response[1].id", is(2)))
         .andExpect(jsonPath("$.response[1].name", is("Product B")))
         .andExpect(jsonPath("$.response[1].details", is("Almost sold out!")))
         .andExpect(jsonPath("$.response[1].reviewCount").exists())
         .andExpect(jsonPath("$.response[1].reviewCount").isNumber())
-        .andExpect(jsonPath("$.response[2].seq", is(1)))
+        .andExpect(jsonPath("$.response[2].id", is(1)))
         .andExpect(jsonPath("$.response[2].name", is("Product A")))
         .andExpect(jsonPath("$.response[2].reviewCount").exists())
-        .andExpect(jsonPath("$.response[2].reviewCount").isNumber())
-    ;
+        .andExpect(jsonPath("$.response[2].reviewCount").isNumber());
   }
 
   @Test
@@ -81,7 +80,7 @@ class ProductRestControllerTest {
           .andExpect(handler().handlerType(ProductRestController.class))
           .andExpect(handler().methodName("findById"))
           .andExpect(jsonPath("$.success", is(true)))
-          .andExpect(jsonPath("$.response.seq", is(i)))
+          .andExpect(jsonPath("$.response.id", is(i)))
           .andExpect(jsonPath("$.response.name", is(productNameForProductId.get(i))))
           .andExpect(jsonPath("$.response.reviewCount").exists())
           .andExpect(jsonPath("$.response.reviewCount").isNumber())

@@ -42,8 +42,7 @@ public class Review implements Serializable {
     private LocalDateTime createAt;
 
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-//    @JoinColumn(name = "user_seq", insertable = false, updatable = false)
-    @JoinColumn(name = "user_seq")
+    @JoinColumn(name = "user_seq", insertable = false, updatable = false)
     private User user;
 
     @Builder

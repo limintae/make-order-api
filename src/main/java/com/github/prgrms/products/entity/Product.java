@@ -16,7 +16,6 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 import java.util.Objects;
 
-import static com.google.common.base.Preconditions.checkArgument;
 import static java.time.LocalDateTime.now;
 import static org.apache.commons.lang3.ObjectUtils.defaultIfNull;
 
@@ -24,23 +23,26 @@ import static org.apache.commons.lang3.ObjectUtils.defaultIfNull;
 @Getter
 @Setter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-@Table(name = "product")
+@Table(name = "products")
 @Entity
 public class Product {
 
   @Id
+  @Column(name = "seq")
   @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "product_id_seq")
   private Long id;
 
-  @Column(nullable = false, length = 100)
+  @Column(name = "name", nullable = false, length = 50)
   private String name;
 
-
+  @Column(name = "details", length = 1000)
   @Lob
   private String details;
 
+  @Column(name = "review_count")
   private int reviewCount;
 
+  @Column(name = "create_at", nullable = false)
   private LocalDateTime createAt;
 
   public Product(String name, String details) {
@@ -56,7 +58,6 @@ public class Product {
     this.createAt = defaultIfNull(createAt, now());
   }
 
-
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
@@ -64,8 +65,5 @@ public class Product {
     Product product = (Product) o;
     return Objects.equals(id, product.id);
   }
-
-
-
 
 }
