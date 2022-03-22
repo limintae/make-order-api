@@ -1,10 +1,8 @@
 package com.github.prgrms.orders.service;
 
-import com.github.prgrms.orders.entity.Order;
 import com.github.prgrms.orders.model.response.OrderResponse;
 import com.github.prgrms.orders.repository.OrderRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
@@ -17,9 +15,7 @@ public class OrderService {
     private final OrderRepository orderRepository;
 
     public List<OrderResponse> findAll(Long userSeq, Pageable pageable) {
-        Page<Order> po = orderRepository.findByUserSeqOrderBySeqDesc(userSeq, pageable);
-        List<OrderResponse> list = po.stream().map(OrderResponse::of).toList();
-        return list;
+        return orderRepository.findByUserSeqOrderBySeqDesc(userSeq, pageable).stream().map(OrderResponse::of).toList();
     }
 
     public OrderResponse findByUserOrder(Long userSeq, Long orderSeq) {
