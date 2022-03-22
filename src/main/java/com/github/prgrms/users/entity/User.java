@@ -51,8 +51,8 @@ public class User implements Serializable {
   @Column(name = "create_at")
   private LocalDateTime createAt;
 
-  @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-  private List<Review> reviews;
+//  @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//  private List<Review> reviews;
 
   public static User of(String name, String email, String password){
     return new User(null, name, email, password, 0, null, null);

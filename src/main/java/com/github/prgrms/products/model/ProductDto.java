@@ -11,7 +11,6 @@ import java.time.LocalDateTime;
 import static org.springframework.beans.BeanUtils.copyProperties;
 
 @Getter
-@Setter
 public class ProductDto {
 
   private Long id;
