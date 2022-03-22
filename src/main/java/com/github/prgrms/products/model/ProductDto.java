@@ -2,7 +2,6 @@ package com.github.prgrms.products.model;
 
 import com.github.prgrms.products.entity.Product;
 import lombok.Getter;
-import lombok.Setter;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 

@@ -17,7 +17,7 @@ public class Order {
     @Id
     @Column(name = "seq")
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "order_id_seq")
-    private Long id;
+    private Long seq;
 
     @Column(name = "user_seq", nullable = false)
     private Long userSeq;
@@ -48,7 +48,7 @@ public class Order {
     @CreationTimestamp
     private LocalDateTime createAt;
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "review_seq", insertable = false, updatable = false)
     private Review review;
 
