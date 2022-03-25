@@ -1,4 +1,4 @@
-package com.github.prgrms.orders.model.response;
+package com.github.prgrms.orders.adapter.in.response;
 
 import com.github.prgrms.review.entity.Review;
 import lombok.Builder;

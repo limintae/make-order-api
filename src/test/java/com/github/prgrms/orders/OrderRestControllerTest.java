@@ -1,7 +1,7 @@
 package com.github.prgrms.orders;
 
 import com.github.prgrms.configures.JwtTokenConfigure;
-import com.github.prgrms.orders.api.OrderRestController;
+import com.github.prgrms.orders.adapter.in.OrderRestController;
 import com.github.prgrms.security.WithMockJwtAuthentication;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;

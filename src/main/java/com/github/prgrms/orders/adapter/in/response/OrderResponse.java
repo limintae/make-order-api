@@ -1,6 +1,6 @@
-package com.github.prgrms.orders.model.response;
+package com.github.prgrms.orders.adapter.in.response;
 
-import com.github.prgrms.orders.entity.Order;
+import com.github.prgrms.orders.domain.Order;
 import com.github.prgrms.products.enums.OrderStatus;
 import lombok.Builder;
 import lombok.Getter;

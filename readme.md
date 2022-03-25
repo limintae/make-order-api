@@ -221,7 +221,7 @@ curl --request GET 'http://localhost:8080/api/users/me' \
 주문은 `Review`를 포함할 수 있다. (샘플 데이터에서 `seq=4`인 주문은 리뷰를 포함한다.)
 
 - 구분: 인증 사용자용 API
-- 구현 컨트롤러: com.github.prgrms.orders.api.OrderRestController
+- 구현 컨트롤러: com.github.prgrms.orders.adapter.in.OrderRestController
 - 컨트롤러 메소드명: findAll
 - URL: GET /api/orders?offset=0&size=5
     * offset: offset 기반 페이징 처리 파리미터 (최소값: 0, 최대값: Long.MAX_VALUE, 기본값: 0)
@@ -316,7 +316,7 @@ curl --request GET 'http://localhost:8080/api/users/me' \
 주문은 `Review`를 포함할 수 있다. (샘플 데이터에서 `seq=4`인 주문은 리뷰를 포함한다.)
 
 - 구분: 인증 사용자용 API
-- 구현 컨트롤러: com.github.prgrms.orders.api.OrderRestController
+- 구현 컨트롤러: com.github.prgrms.orders.adapter.in.OrderRestController
 - 컨트롤러 메소드명: findById
 - URL: GET /api/orders/{id}
     * {id}: 조회 대상 주문의 PK
@@ -355,7 +355,7 @@ curl --request GET 'http://localhost:8080/api/users/me' \
 상태 변경이 불가능하다면 예외를 발생시키지 말고 `false`를 정상 반환한다.
 
 - 구분: 인증 사용자용 API
-- 구현 컨트롤러: com.github.prgrms.orders.api.OrderRestController
+- 구현 컨트롤러: com.github.prgrms.orders.adapter.in.OrderRestController
 - 컨트롤러 메소드명: accept
 - URL: PATCH /api/orders/{id}/accept
     * {id}: 상태를 변경할 주문의 PK
@@ -387,7 +387,7 @@ curl --request GET 'http://localhost:8080/api/users/me' \
 상태 변경이 불가능하다면 예외를 발생시키지 말고 `false`를 정상 반환한다.
 
 - 구분: 인증 사용자용 API
-- 구현 컨트롤러: com.github.prgrms.orders.api.OrderRestController
+- 구현 컨트롤러: com.github.prgrms.orders.adapter.in.OrderRestController
 - 컨트롤러 메소드명: reject
 - URL: PATCH /api/orders/{id}/reject
     * {id}: 상태를 변경할 주문의 PK
@@ -425,7 +425,7 @@ curl --request GET 'http://localhost:8080/api/users/me' \
 상태 변경이 불가능하다면 예외를 발생시키지 말고 `false`를 정상 반환한다.
 
 - 구분: 인증 사용자용 API
-- 구현 컨트롤러: com.github.prgrms.orders.api.OrderRestController
+- 구현 컨트롤러: com.github.prgrms.orders.adapter.in.OrderRestController
 - 컨트롤러 메소드명: shipping
 - URL: PATCH /api/orders/{id}/shipping
     * {id}: 상태를 변경할 주문의 PK
@@ -457,7 +457,7 @@ curl --request GET 'http://localhost:8080/api/users/me' \
 상태 변경이 불가능하다면 예외를 발생시키지 말고 `false`를 정상 반환한다.
 
 - 구분: 인증 사용자용 API
-- 구현 컨트롤러: com.github.prgrms.orders.api.OrderRestController
+- 구현 컨트롤러: com.github.prgrms.orders.adapter.in.OrderRestController
 - 컨트롤러 메소드명: complete
 - URL: PATCH /api/orders/{id}/complete
     * {id}: 상태를 변경할 주문의 PK

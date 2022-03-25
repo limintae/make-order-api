@@ -1,8 +1,8 @@
-package com.github.prgrms.orders.api;
+package com.github.prgrms.orders.adapter.in;
 
 import com.github.prgrms.configures.web.SimplePageRequest;
-import com.github.prgrms.orders.model.response.OrderResponse;
-import com.github.prgrms.orders.service.OrderService;
+import com.github.prgrms.orders.adapter.in.response.OrderResponse;
+import com.github.prgrms.orders.application.OrderService;
 import com.github.prgrms.security.token.JwtAuthentication;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.PageRequest;

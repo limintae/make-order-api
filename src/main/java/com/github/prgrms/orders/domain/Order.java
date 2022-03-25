@@ -1,4 +1,4 @@
-package com.github.prgrms.orders.entity;
+package com.github.prgrms.orders.domain;
 
 import com.github.prgrms.products.enums.OrderStatus;
 import com.github.prgrms.review.entity.Review;
