@@ -1,6 +1,6 @@
-package com.github.prgrms.orders.domain;
+package com.github.prgrms.orders.adapter.persistence.model;
 
-import com.github.prgrms.products.enums.OrderStatus;
+import com.github.prgrms.orders.application.enums.OrderStatus;
 import com.github.prgrms.review.entity.Review;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;

@@ -1,7 +1,7 @@
-package com.github.prgrms.orders.adapter.in.response;
+package com.github.prgrms.orders.adapter.entrypoint.api.model.response;
 
-import com.github.prgrms.orders.domain.Order;
-import com.github.prgrms.products.enums.OrderStatus;
+import com.github.prgrms.orders.adapter.persistence.model.Order;
+import com.github.prgrms.orders.application.enums.OrderStatus;
 import lombok.Builder;
 import lombok.Getter;
 import org.apache.commons.lang3.builder.ToStringBuilder;

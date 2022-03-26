@@ -1,4 +1,4 @@
-package com.github.prgrms.products.enums;
+package com.github.prgrms.orders.application.enums;
 
 public enum OrderStatus {
     REQUESTED,

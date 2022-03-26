@@ -1,7 +1,7 @@
 package com.github.prgrms.orders;
 
 import com.github.prgrms.configures.JwtTokenConfigure;
-import com.github.prgrms.orders.adapter.in.OrderRestController;
+import com.github.prgrms.orders.adapter.entrypoint.api.OrderRestController;
 import com.github.prgrms.review.api.ReviewRestController;
 import com.github.prgrms.products.api.ProductRestController;
 import com.github.prgrms.security.WithMockJwtAuthentication;
