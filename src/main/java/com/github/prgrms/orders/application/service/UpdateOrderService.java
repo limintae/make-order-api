@@ -19,12 +19,53 @@ public class UpdateOrderService implements UpdateOrderUseCase {
 
     @Transactional
     @Override
-    public boolean acceptOrder(Long userSeq, Long orderSeq) {
-        Order order = readOrderPort.findBySeqAndUserSeq(userSeq, orderSeq)
+    public boolean requestedToAcceptOrder(Long userSeq, Long orderSeq) {
+        Order order = readOrderPort.findBySeqAndUserSeq(orderSeq, userSeq)
                 .orElseThrow(() -> new NotFoundException("order not founded"));
 
         if (order.getState() == OrderStatus.REQUESTED) {
             order.setState(OrderStatus.ACCEPTED);
+            updateOrderPort.updateOrderStatus(order);
+            return true;
+        }
+        return false;
+    }
+
+    @Transactional
+    @Override
+    public boolean acceptToShippingOrder(Long userSeq, Long orderSeq) {
+        Order order = readOrderPort.findBySeqAndUserSeq(orderSeq, userSeq)
+                .orElseThrow(() -> new NotFoundException("order not founded"));
+
+        if (order.getState() == OrderStatus.ACCEPTED) {
+            order.setState(OrderStatus.SHIPPING);
+            updateOrderPort.updateOrderStatus(order);
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean requestedToRejectOrder(Long userSeq, Long orderSeq, String rejectMessage) {
+        Order order = readOrderPort.findBySeqAndUserSeq(orderSeq, userSeq)
+                .orElseThrow(() -> new NotFoundException("order not founded"));
+
+        if (order.getState() == OrderStatus.REQUESTED) {
+            order.setState(OrderStatus.REJECTED);
+            order.setRejectMsg(rejectMessage);
+            updateOrderPort.updateOrderStatus(order);
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean shippingToCompleteOrder(Long userSeq, Long orderSeq) {
+        Order order = readOrderPort.findBySeqAndUserSeq(orderSeq, userSeq)
+                .orElseThrow(() -> new NotFoundException("order not founded"));
+
+        if (order.getState() == OrderStatus.SHIPPING) {
+            order.setState(OrderStatus.COMPLETED);
             updateOrderPort.updateOrderStatus(order);
             return true;
         }

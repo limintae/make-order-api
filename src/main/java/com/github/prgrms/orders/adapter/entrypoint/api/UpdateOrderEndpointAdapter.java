@@ -12,8 +12,22 @@ public class UpdateOrderEndpointAdapter implements UpdateOrderEndpointPort {
     private final UpdateOrderUseCase updateOrderUseCase;
 
     @Override
-    public boolean acceptOrder(Long userSeq, Long orderSeq) {
-        return updateOrderUseCase.acceptOrder(userSeq, orderSeq);
+    public boolean requestedToAcceptOrder(Long userSeq, Long orderSeq) {
+        return updateOrderUseCase.requestedToAcceptOrder(userSeq, orderSeq);
     }
 
+    @Override
+    public boolean acceptToShippingOrder(Long userSeq, Long orderSeq) {
+        return updateOrderUseCase.acceptToShippingOrder(userSeq, orderSeq);
+    }
+
+    @Override
+    public boolean requestedToRejectOrder(Long userSeq, Long orderSeq, String rejectMessage) {
+        return updateOrderUseCase.requestedToRejectOrder(userSeq, orderSeq, rejectMessage);
+    }
+
+    @Override
+    public boolean shippingToCompleteOrder(Long userSeq, Long orderSeq) {
+        return updateOrderUseCase.shippingToCompleteOrder(userSeq, orderSeq);
+    }
 }

@@ -4,6 +4,7 @@ import com.github.prgrms.orders.application.enums.OrderStatus;
 import com.github.prgrms.review.entity.Review;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -39,9 +40,11 @@ public class Order {
     private String rejectMsg;
 
     @Column(name = "completed_at")
+    @UpdateTimestamp
     private LocalDateTime completedAt;
 
     @Column(name = "rejected_at")
+    @UpdateTimestamp
     private LocalDateTime rejectedAt;
 
     @Column(name = "create_at", nullable = false)
