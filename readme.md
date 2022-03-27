@@ -168,7 +168,7 @@ curl --request GET 'http://localhost:8080/api/users/me' \
 리뷰 작성이 불가능하다면 `400 오류`를 응답한다.
 
 - 구분: 인증 사용자용 API
-- 구현 컨트롤러: com.github.prgrms.review.api.ReviewRestController
+- 구현 컨트롤러: com.github.prgrms.orders.adapter.entrypoint.api.ReviewRestController
 - 컨트롤러 메소드명: review
 - URL: POST /api/orders/{id}/review
     * {id}: 리뷰를 남기려는 주문의 PK

@@ -1,7 +1,6 @@
 package com.github.prgrms.orders.adapter.persistence.model;
 
 import com.github.prgrms.orders.application.enums.OrderStatus;
-import com.github.prgrms.review.entity.Review;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -51,7 +50,7 @@ public class Order {
     @CreationTimestamp
     private LocalDateTime createAt;
 
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "review_seq", insertable = false, updatable = false)
     private Review review;
 

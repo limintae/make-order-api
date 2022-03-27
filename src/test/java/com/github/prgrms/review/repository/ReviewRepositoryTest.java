@@ -1,8 +1,8 @@
 package com.github.prgrms.review.repository;
 
 import com.github.prgrms.common.RepositoryTest;
-import com.github.prgrms.review.entity.Review;
-import com.github.prgrms.users.entity.User;
+import com.github.prgrms.orders.adapter.persistence.ReviewRepository;
+import com.github.prgrms.orders.adapter.persistence.model.Review;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

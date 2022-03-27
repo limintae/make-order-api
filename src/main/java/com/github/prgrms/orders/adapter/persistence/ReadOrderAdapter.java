@@ -21,8 +21,8 @@ public class ReadOrderAdapter implements ReadOrderPort {
     }
 
     @Override
-    public Optional<Order> findBySeqAndUserSeq(Long orderId, Long userSeq) {
-        return orderRepository.findBySeqAndUserSeq(orderId, userSeq);
+    public Optional<Order> findBySeqAndUserSeq(Long orderSeq, Long userSeq) {
+        return orderRepository.findBySeqAndUserSeq(orderSeq, userSeq);
     }
 
 }

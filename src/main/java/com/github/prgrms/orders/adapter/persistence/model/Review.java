@@ -1,6 +1,5 @@
-package com.github.prgrms.review.entity;
+package com.github.prgrms.orders.adapter.persistence.model;
 
-import com.github.prgrms.users.entity.User;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -11,7 +10,7 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 
 @Getter @Setter
-@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@NoArgsConstructor
 @Table(name = "reviews")
 @Entity
 public class Review implements Serializable {
@@ -19,9 +18,8 @@ public class Review implements Serializable {
     private static final long serialVersionUID = -245683166190478328L;
 
     @Id
-    @NotNull
     @Column(name = "seq")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "review_id_seq")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long seq;
 
     @NotNull
@@ -36,7 +34,6 @@ public class Review implements Serializable {
     @Column(name = "content", nullable = false)
     private String content;
 
-    @NotNull
     @Column(name = "create_at", nullable = false)
     @CreationTimestamp
     private LocalDateTime createAt;
@@ -46,12 +43,18 @@ public class Review implements Serializable {
 //    private User user;
 
     @Builder
-    public Review(Long seq, Long userSeq, Long productSeq, String content, LocalDateTime createAt) {
-        this.seq = seq;
+    public Review(Long userSeq, Long productSeq, String content) {
         this.userSeq = userSeq;
         this.productSeq = productSeq;
         this.content = content;
-        this.createAt = createAt;
+    }
+
+    public static Review of(Long userSeq, Long productSeq, String content) {
+        return Review.builder()
+                .userSeq(userSeq)
+                .productSeq(productSeq)
+                .content(content)
+                .build();
     }
 
 }

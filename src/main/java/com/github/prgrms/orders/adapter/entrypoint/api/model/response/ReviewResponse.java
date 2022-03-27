@@ -1,6 +1,6 @@
 package com.github.prgrms.orders.adapter.entrypoint.api.model.response;
 
-import com.github.prgrms.review.entity.Review;
+import com.github.prgrms.orders.adapter.persistence.model.Review;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -22,7 +22,7 @@ public class ReviewResponse {
         this.createAt = createAt;
     }
 
-    static ReviewResponse of(Review source) {
+    public static ReviewResponse of(Review source) {
         return ReviewResponse.builder()
                 .seq(source.getSeq())
                 .productId(source.getProductSeq())

@@ -3,11 +3,9 @@ package com.github.prgrms.users.entity;
 import static java.time.LocalDateTime.now;
 import static org.apache.commons.lang3.ObjectUtils.defaultIfNull;
 
-import com.github.prgrms.review.entity.Review;
 import com.github.prgrms.security.token.Jwt;
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.Objects;
 import javax.persistence.*;
 
