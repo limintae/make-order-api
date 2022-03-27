@@ -1,4 +1,6 @@
-## 주문관리 API With Hexagonal 스터디
+## 주문관리 API 개발
+order, review, product 도메인에 대하여 Hexagonal 아키텍처를 적용하는 학습을 수행하였습니다.    
+2022-03-27기준 user 도메인은 Hexagonal 아키텍처 리펙토링 하지않고 마무리합니다.  
 
 주문관리 API 서버를 개발해야 합니다. 다행히 전임자가 `Apache Maven`을 활용해 필요한 라이브러리 설정, 프로젝트 기본 구조 셋업, spring-security 기반으로 JWT 인증 및 인가 처리 부분까지 완성해 두었습니다.
 
