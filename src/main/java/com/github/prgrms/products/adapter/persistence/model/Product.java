@@ -1,4 +1,4 @@
-package com.github.prgrms.products.entity;
+package com.github.prgrms.products.adapter.persistence.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -30,7 +30,7 @@ public class Product {
   @Id
   @Column(name = "seq")
   @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "product_id_seq")
-  private Long id;
+  private Long seq;
 
   @Column(name = "name", nullable = false, length = 50)
   private String name;
@@ -50,12 +50,16 @@ public class Product {
   }
 
   @Builder
-  public Product(Long id, String name, String details, int reviewCount, LocalDateTime createAt) {
-    this.id = id;
+  public Product(Long seq, String name, String details, int reviewCount, LocalDateTime createAt) {
+    this.seq = seq;
     this.name = name;
     this.details = details;
     this.reviewCount = reviewCount;
     this.createAt = defaultIfNull(createAt, now());
+  }
+
+  public void addReviewCount() {
+    this.reviewCount++;
   }
 
   @Override
@@ -63,7 +67,7 @@ public class Product {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     Product product = (Product) o;
-    return Objects.equals(id, product.id);
+    return Objects.equals(seq, product.seq);
   }
 
 }

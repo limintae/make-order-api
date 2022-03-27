@@ -1,6 +1,6 @@
-package com.github.prgrms.products;
+package com.github.prgrms.products.adapter.entrypoint.api;
 
-import com.github.prgrms.products.api.ProductRestController;
+import com.github.prgrms.products.adapter.entrypoint.api.ProductRestController;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestInstance;

@@ -1,6 +1,7 @@
 package com.github.prgrms.orders.adapter.persistence.model;
 
 import com.github.prgrms.orders.application.enums.OrderStatus;
+import com.github.prgrms.products.adapter.persistence.model.Product;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
@@ -16,7 +17,7 @@ public class Order {
 
     @Id
     @Column(name = "seq")
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "order_id_seq")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long seq;
 
     @Column(name = "user_seq", nullable = false)
@@ -50,9 +51,13 @@ public class Order {
     @CreationTimestamp
     private LocalDateTime createAt;
 
-    @OneToOne(fetch = FetchType.EAGER, cascade = CascadeType.PERSIST)
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
     @JoinColumn(name = "review_seq", insertable = false, updatable = false)
     private Review review;
+
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.PERSIST)
+    @JoinColumn(name = "product_seq", insertable = false, updatable = false)
+    private Product product;
 
     @Builder
     public Order(

@@ -38,6 +38,7 @@ public class WriteReviewService implements WriteReviewUseCase {
             );
             order.setReviewSeq(writeReview.getSeq());
             order.setReview(writeReview);
+            order.getProduct().addReviewCount();
             updateOrderPort.updateOrderStatus(order);
             return ReviewResponse.of(order.getReview());
         } else {

@@ -1,4 +1,4 @@
-package com.github.prgrms.orders;
+package com.github.prgrms.orders.adapter.entrypoint.api;
 
 import com.github.prgrms.configures.JwtTokenConfigure;
 import com.github.prgrms.orders.adapter.entrypoint.api.OrderRestController;

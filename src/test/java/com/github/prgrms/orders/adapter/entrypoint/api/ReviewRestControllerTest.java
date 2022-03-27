@@ -1,9 +1,9 @@
-package com.github.prgrms.orders;
+package com.github.prgrms.orders.adapter.entrypoint.api;
 
 import com.github.prgrms.configures.JwtTokenConfigure;
 import com.github.prgrms.orders.adapter.entrypoint.api.OrderRestController;
 import com.github.prgrms.orders.adapter.entrypoint.api.ReviewRestController;
-import com.github.prgrms.products.api.ProductRestController;
+import com.github.prgrms.products.adapter.entrypoint.api.ProductRestController;
 import com.github.prgrms.security.WithMockJwtAuthentication;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -172,7 +172,7 @@ class ReviewRestControllerTest {
         .andExpect(handler().handlerType(ProductRestController.class))
         .andExpect(handler().methodName("findById"))
         .andExpect(jsonPath("$.success", is(true)))
-        .andExpect(jsonPath("$.response.seq", is(3)))
+        .andExpect(jsonPath("$.response.id", is(3)))
         .andExpect(jsonPath("$.response.reviewCount", is(1)))
     ;
     result = mockMvc.perform(

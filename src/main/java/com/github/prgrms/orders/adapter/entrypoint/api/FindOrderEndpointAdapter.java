@@ -5,6 +5,7 @@ import com.github.prgrms.orders.adapter.entrypoint.api.model.response.OrderRespo
 import com.github.prgrms.orders.application.port.entrypoint.api.FindOrderEndpointPort;
 import com.github.prgrms.orders.application.usecase.FindOrderUseCase;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.domain.Pageable;
 
 import java.util.List;

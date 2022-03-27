@@ -1,4 +1,4 @@
-package com.github.prgrms.review.repository;
+package com.github.prgrms.orders.adapter.persistence;
 
 import com.github.prgrms.common.RepositoryTest;
 import com.github.prgrms.orders.adapter.persistence.ReviewRepository;
@@ -20,9 +20,6 @@ class ReviewRepositoryTest extends RepositoryTest {
     @Test
     void reviewCount() {
         List<Review> reviews = reviewRepository.findAll();
-//        User user = reviews.get(0).getUser();
-//        String email = user.getEmail();
-//        Long id = user.getId();
         assertThat(reviews.size()).isEqualTo(1);
     }
 

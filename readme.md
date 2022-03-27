@@ -48,9 +48,9 @@
 이미 구현되 있는 아래 2개 API는 응답 포맷이 `요건 1` 정의에 맞지 않기 때문에 수정이 필요합니다.
 
 - 단일 상품 조회: /api/products/{id}
-    * 구현위치: com.github.prgrms.products.api.ProductRestController.findById 메소드
+    * 구현위치: com.github.prgrms.products.adapter.entrypoint.api.ProductRestController.findById 메소드
 - 상품 목록 조회: /api/products
-    * 구현위치: com.github.prgrms.products.api.ProductRestController.findAll 메소드
+    * 구현위치: com.github.prgrms.products.adapter.entrypoint.api.ProductRestController.findAll 메소드
 
 그 외 API는 `요건 1`을 만족하도록 개발을 시작하세요.
 

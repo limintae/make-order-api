@@ -38,10 +38,6 @@ public class Review implements Serializable {
     @CreationTimestamp
     private LocalDateTime createAt;
 
-//    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-//    @JoinColumn(name = "user_seq", insertable = false, updatable = false)
-//    private User user;
-
     @Builder
     public Review(Long userSeq, Long productSeq, String content) {
         this.userSeq = userSeq;
