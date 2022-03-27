@@ -5,7 +5,6 @@ import com.github.prgrms.products.adapter.entrypoint.api.model.response.ProductD
 import com.github.prgrms.products.application.port.entrypoint.api.FindProductEndpointPort;
 import com.github.prgrms.products.application.usecase.FindProductUseCase;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.domain.Sort;
 
 import java.util.List;

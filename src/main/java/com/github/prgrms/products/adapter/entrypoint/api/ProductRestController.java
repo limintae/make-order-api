@@ -23,16 +23,6 @@ public class ProductRestController {
 
   private final FindProductEndpointAdapter findProductEndpointAdapter;
 
-  // FIXME `요건 1` 정의에 맞게 응답 타입 수정이 필요합니다.
-//  @GetMapping(path = "{id}")
-//  public ApiResult<ProductDto> findById(@PathVariable Long id) {
-//    return success(
-//            findProductService.findById(id)
-//              .map(ProductDto::new)
-//              .orElseThrow(() -> new NotFoundException("Could not found product for " + id))
-//    );
-//  }
-
   /**
    * 단일 상품조회
    * @param productId
@@ -50,9 +40,6 @@ public class ProductRestController {
   @GetMapping
   public ApiResult<List<ProductDto>> findAll() {
     return success(findProductEndpointAdapter.findAllProducts(Sort.Direction.DESC, "seq"));
-//    return success(findProductService.findAll().stream()
-//        .map(ProductDto::new)
-//        .collect(toList()));
   }
 
 }
