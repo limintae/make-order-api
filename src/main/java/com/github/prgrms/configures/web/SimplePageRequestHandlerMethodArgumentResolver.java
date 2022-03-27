@@ -1,6 +1,8 @@
 package com.github.prgrms.configures.web;
 
 import org.springframework.core.MethodParameter;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.support.WebDataBinderFactory;
 import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.method.support.HandlerMethodArgumentResolver;
@@ -41,8 +43,7 @@ public class SimplePageRequestHandlerMethodArgumentResolver implements HandlerMe
     if (offset < 0) offset = DEFAULT_OFFSET;
     if (size < 1 || size > 5) size = DEFAULT_SIZE;
 
-    // TODO 구현이 필요 합니다.
-    return new SimplePageRequest(offset, size);
+    return PageRequest.of((int) offset, size);
   }
 
   public void setOffsetParameterName(String offsetParameterName) {

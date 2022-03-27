@@ -1,11 +1,9 @@
 package com.github.prgrms.orders.adapter.entrypoint.api;
 
-import com.github.prgrms.configures.web.SimplePageRequest;
 import com.github.prgrms.orders.adapter.entrypoint.api.model.request.RejectRequest;
 import com.github.prgrms.orders.adapter.entrypoint.api.model.response.OrderResponse;
 import com.github.prgrms.security.token.JwtAuthentication;
 import lombok.RequiredArgsConstructor;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
@@ -33,8 +31,7 @@ public class OrderRestController {
     @GetMapping
     public ApiResult<List<OrderResponse>> findAll(
             @AuthenticationPrincipal JwtAuthentication authentication,
-            SimplePageRequest simplePageRequest) {
-        Pageable pageable = PageRequest.of((int) simplePageRequest.getOffset(), simplePageRequest.getSize());
+            Pageable pageable) {
         return success(findOrderEndpointAdapter.findAll(authentication.id, pageable));
     }
 
